@@ -15,10 +15,11 @@ from sklearn.metrics import mean_absolute_error,mean_squared_error,r2_score
 st.set_page_config("Multiple Linear Regression",layout = "centered")
 
 #Load css
+def load_css(filename):
+    css_path = os.path.join(os.path.dirname(__file__), filename)
+    with open(css_path) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-def load_css(file):
-    with open(file) as f:
-        st.markdown(f"<style>{f.read()}<style>",unsafe_allow_html=True) #allowing html style tag to work
 load_css("style1.css")
 
 #Title
