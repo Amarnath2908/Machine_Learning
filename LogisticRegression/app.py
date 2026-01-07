@@ -29,9 +29,13 @@ st.markdown("""
 # ---------- Load Data ----------
 @st.cache_data
 def load_data():
-    return pd.read_csv("Telco_customer.csv")
-
+    base_path = os.path.dirname(__file__)
+    file_path = os.path.join(base_path, "Telco_customer.csv")
+    return pd.read_csv(file_path)
+# Load data FIRST
 df = load_data()
+
+
 
 st.subheader("Dataset Preview")
 # ---------- Encoding (SAFE METHOD) ----------
